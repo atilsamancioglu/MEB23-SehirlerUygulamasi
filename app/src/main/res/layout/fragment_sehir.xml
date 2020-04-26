@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="secilenSehir"
+            type="com.atilsamancioglu.sehirleruygulamasi.model.Sehir" />
+
+    </data>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.SehirFragment">
+
+    <ImageView
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="200dp"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitCenter"
+        android:downloadGorsel="@{secilenSehir.sehirGorseli}"
+        android:id="@+id/sehirImage">
+
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sehirIsmi"
+        android:layout_below="@id/sehirImage"
+        android:text="@{secilenSehir.sehirIsmi}"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sehirBolgesi"
+        android:layout_below="@id/sehirIsmi"
+        android:text="@{secilenSehir.sehirBolgesi}"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sehirNufusu"
+        android:layout_below="@id/sehirBolgesi"
+        android:text="@{secilenSehir.sehirNufusu}"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sehirMeshur"
+        android:layout_below="@id/sehirNufusu"
+        android:text="@{secilenSehir.sehirMeshur}"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp">
+
+    </TextView>
+
+
+</RelativeLayout>
+</layout>

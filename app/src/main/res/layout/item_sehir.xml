@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="sehir"
+            type="com.atilsamancioglu.sehirleruygulamasi.model.Sehir" />
+
+        <variable
+            name="listener"
+            type="com.atilsamancioglu.sehirleruygulamasi.adapter.SehirClickListener" />
+    </data>
+
+<LinearLayout
+
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:onClick="@{listener::onSehirClicked}"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="@{String.valueOf(sehir.uuid)}"
+        android:id="@+id/itemSehirUuid">
+
+    </TextView>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:id="@+id/itemImageView"
+        android:downloadGorsel="@{sehir.sehirGorseli}"
+        android:padding="3dp"
+        >
+
+    </ImageView>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="4"
+        android:layout_gravity="center"
+        >
+    <TextView
+        android:id="@+id/itemSehirIsmi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{sehir.sehirIsmi}"
+        android:padding="5dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/itemSehirBolgesi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{sehir.sehirBolgesi}"
+        android:textSize="16sp"
+        android:padding="5dp"
+        android:layout_gravity="center">
+
+    </TextView>
+
+    </LinearLayout>
+
+</LinearLayout>
+</layout>
